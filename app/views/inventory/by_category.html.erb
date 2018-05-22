@@ -1,2 +1,8 @@
-<h1>Inventory#by_category</h1>
-<p>Find me in app/views/inventory/by_category.html.erb</p>
+<% @categories.each do | the_category | %>
+  <p><strong><%= the_category %></strong></p>
+  <% @products.each do | product | %>
+    <% if product.category == the_category %>
+    <p><%= product.name %></p>
+    <% end %>
+  <% end %>
+<% end %>

@@ -7,5 +7,7 @@ class InventoryController < ApplicationController
   end
 
   def by_category
+  	@products = Product.all
+  	@categories = Product.pluck(:category).uniq.sort
   end
 end
